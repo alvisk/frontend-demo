@@ -30,7 +30,7 @@ const ResponsiveCardBackdrop: FC<ResponsiveCardBackdropProps> = ({
   alt,
   className = "",
   aspectRatios = {},
-  priority = false,
+  priority = true,
   quality = 75,
 }) => {
   const overrideAspectRatios: AspectRatios =
