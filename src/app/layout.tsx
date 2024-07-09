@@ -1,5 +1,7 @@
 import "@/styles/globals.css";
 
+import localFont from "next/font/local";
+
 import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 
@@ -9,11 +11,27 @@ export const metadata: Metadata = {
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
 
+const tearfundFont = localFont({
+  src: [
+    {
+      path: "./font/FSMeWeb-Regular_rcfffc.woff2",
+      weight: "400",
+      style: "normal",
+    },
+
+    {
+      path: "./font/FSMeWeb-Bold_ce2eoa.woff2",
+      weight: "700",
+      style: "bold",
+    },
+  ],
+});
+
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable}`}>
+    <html lang="en" className={`${tearfundFont.className}`}>
       <body>{children}</body>
     </html>
   );
